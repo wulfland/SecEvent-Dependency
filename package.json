@@ -1,5 +1,5 @@
 {
-  "name": "@wulfland/SecEvent-Dependency",
+  "name": "@wulfland/secevent-dependency",
   "version": "1.0.0",
   "description": "This is a package to demo releasing in GitHub.",
   "main": "index.js",
