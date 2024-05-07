@@ -113,17 +113,6 @@ jobs:
         uses: gittools/actions/gitversion/execute@v0.10.2
         with:
           useConfigFile: true
-     
-      - name: Create a new release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2022-11-28" \
-            /repos/wulfland/package-recipe/dependency-graph/sbom > sbom.json
-          gh release create ${{ env.GITVERSION_SEMVER }} --generate-notes
-          gh release upload ${{ env.GITVERSION_SEMVER }} sbom.json --clobber
     
       - uses: actions/setup-node@v4
         with:
@@ -145,3 +134,23 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Generate SBoM
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            /repos/wulfland/package-recipe/dependency-graph/sbom > sbom.json
+
+      - name: Create a new release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            /repos/wulfland/package-recipe/dependency-graph/sbom > sbom.json
+          gh release create ${{ env.GITVERSION_SEMVER }} --generate-notes
+          gh release upload ${{ env.GITVERSION_SEMVER }} sbom.json --clobber
