@@ -1,5 +1,5 @@
 {
-  "name": "@wulfland/package-recipe",
+  "name": "@wulfland/SecEvent-Dependency",
   "version": "1.0.0",
   "description": "This is a package to demo releasing in GitHub.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wulfland/package-recipe.git"
+    "url": "git+https://github.com/wulfland/SecEvent-Dependency.git"
   },
   "author": "Michael Kaufmann",
   "license": "MIT",
@@ -31,9 +31,9 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/wulfland/package-recipe/issues"
+    "url": "https://github.com/wulfland/SecEvent-Dependency/issues"
   },
-  "homepage": "https://github.com/wulfland/package-recipe#readme",
+  "homepage": "https://github.com/wulfland/SecEvent-Dependency#readme",
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-config-standard": "^17.1.0",
